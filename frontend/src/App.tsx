@@ -512,12 +512,13 @@ function SettingsPage() {
 
   useEffect(() => {
     invoke<VntConfig>("get_vnt_config")
-      .then((c) => setConfig(c))
+      .then((c) => {
+        if (!c.device_name) {
+          c.device_name = "VNTRemote-Desktop";
+        }
+        setConfig(c);
+      })
       .catch(() => {});
-    // 获取设备名称
-    if (!config.device_name) {
-      setConfig((c) => ({ ...c, device_name: "VNTRemote-" + Math.random().toString(36).slice(2, 6) }));
-    }
   }, []);
 
   const handleSave = async () => {
