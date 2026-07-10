@@ -63,15 +63,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             libwebkit2gtk-4.1-dev \
-            libappindicator3-dev \
             librsvg2-dev \
             patchelf \
             libssl-dev \
             libgtk-3-dev \
             libayatana-appindicator3-dev
 
-      # macOS 不需要 webkit2gtk，使用系统内置 WebView
-      # 如果需要额外的 macOS 依赖，在此添加
+      - name: Install Tauri CLI
+        run: cargo install tauri-cli --version "^2"
 
       - name: Install frontend deps
         run: |
