@@ -1,0 +1,35 @@
+[package]
+name = "vnt-remote"
+version = "1.0.0"
+description = "基于 VNT 的远程桌面管理工具"
+authors = ["VNTRemote"]
+edition = "2021"
+
+[lib]
+name = "vnt_remote_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-shell = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-autostart = { version = "2", features = [] }
+tauri-plugin-process = "2"
+tauri-plugin-updater = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "stream"] }
+futures-util = "0.3"
+anyhow = "1"
+chrono = "0.4"
+aes-gcm = "0.10"
+base64 = "0.22"
+sha2 = "0.10"
+rand = "0.8"
+open = "5"
+dirs-next = "2"
