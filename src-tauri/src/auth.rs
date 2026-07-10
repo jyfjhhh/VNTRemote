@@ -155,7 +155,9 @@ impl AuthManager {
 
             // 通过 cmdkey 添加凭据 (临时)
             Command::new("cmdkey")
-                .args(["/generic:TERMSRV/{}", target_ip, "/user:{}", &entry.username, "/pass:{}", &password])
+                .arg(format!("/generic:TERMSRV/{}", target_ip))
+                .arg(format!("/user:{}", entry.username))
+                .arg(format!("/pass:{}", password))
                 .output()
                 .ok();
 

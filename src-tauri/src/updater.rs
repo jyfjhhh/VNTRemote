@@ -44,7 +44,7 @@ impl Updater {
     pub async fn check_for_update(&self) -> Result<Option<ReleaseInfo>> {
         self.set_progress("checking", 0.0, "正在检查更新...");
 
-        let url = "https://api.github.com/repos/vnt-dev/VNTRemote/releases/latest";
+        let url = "https://api.github.com/repos/jyfjhhh/VNTRemote/releases/latest";
         let client = reqwest::Client::builder()
             .user_agent("VNTRemote/1.0")
             .build()?;

@@ -54,7 +54,7 @@
       "dialog": true,
       "pubkey": "",
       "endpoints": [
-        "https://api.github.com/repos/vnt-dev/VNTRemote/releases/latest"
+        "https://api.github.com/repos/jyfjhhh/VNTRemote/releases/latest"
       ]
     }
   }
